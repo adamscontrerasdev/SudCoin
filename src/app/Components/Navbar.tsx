@@ -8,7 +8,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const sectionLinks = [
-    { href: "#", label: "Inicio" },
+    { href: "#home", label: "Inicio" },
     { href: "#about", label: "Quienes somos" },
     { href: "#contact", label: "Como funciona" },
     { href: "#contacto", label: "Contacto" },
@@ -16,7 +16,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="bg-[var(--foreground)] fixed top-0 left-0 w-full h-16 flex items-center justify-between px-4 z-50">
+      <div className="bg-[var(--foreground)] fixed top-0 left-0 w-full h-16 flex items-center justify-between px-4 z-[999]">
         <div className="w-full h-10 flex items-center">
           <h1>SUD Coin</h1>
         </div>
@@ -75,7 +75,7 @@ const Navbar = () => {
 
       {/* Fondo blur al abrir menú */}
       <div
-        className={`fixed top-0 left-0 w-screen h-[100dvh] transition-all duration-300 z-20 ${
+        className={`fixed top-0 left-0 w-screen h-[100dvh] transition-all duration-300 z-50 ${
           isOpen
             ? "backdrop-blur-sm pointer-events-auto"
             : "backdrop-blur-0 pointer-events-none"
