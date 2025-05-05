@@ -1,5 +1,5 @@
-'use client'
-import React from "react";
+"use client";
+import React, { JSX } from "react";
 import Container from "../Components/common/Container";
 import {
   FiLayers,
@@ -39,7 +39,13 @@ const steps = [
   },
 ];
 
-const Step = ({ step, index }: { step: any; index: number }) => {
+interface StepProps {
+  icon: JSX.Element;
+  title: string;
+  text: string;
+}
+
+const Step = ({ step, index }: { step: StepProps; index: number }) => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true });
   const controls = useAnimation();
@@ -57,7 +63,11 @@ const Step = ({ step, index }: { step: any; index: number }) => {
       animate={controls}
       variants={{
         hidden: { opacity: 0, y: 40 },
-        visible: { opacity: 1, y: 0, transition: { duration: 0.5, delay: index * 0.2 } },
+        visible: {
+          opacity: 1,
+          y: 0,
+          transition: { duration: 0.5, delay: index * 0.2 },
+        },
       }}
       className="relative z-30 flex flex-col items-center text-center gap-4 w-[160px]" // Ancho fijo para consistencia
     >
@@ -88,7 +98,10 @@ const ComoFuncionaSection = () => {
             className="hidden md:flex absolute top-[45px] w-full h-1 origin-left bg-[var(--primary)] z-0 justify-between px-10"
           >
             {steps.slice(0, -1).map((_, index) => (
-              <div key={index} className="flex-1 border-t-2 border-solid border-[var(--primary)]" />
+              <div
+                key={index}
+                className="flex-1 border-t-2 border-solid border-[var(--primary)]"
+              />
             ))}
           </motion.div>
 
