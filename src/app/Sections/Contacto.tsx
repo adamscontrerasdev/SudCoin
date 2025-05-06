@@ -4,7 +4,7 @@ import { FiMail, FiSend, FiTwitter, FiLinkedin, FiMessageSquare } from "react-ic
 
 const ContactoSection = () => {
   return (
-    <Container id="contacto">
+    <Container id="contact">
       <section className="w-full max-w-7xl mx-auto px-5 md:px-10 py-24 flex flex-col items-center text-center gap-10 relative">
         {/* Fondo dinámico estilo cripto */}
         <div className="absolute inset-0 -z-10 bg-gradient-to-br from-[#0f0f0f] to-black opacity-90" />

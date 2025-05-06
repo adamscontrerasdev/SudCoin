@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import React, { useState } from "react";
 import { BiMenuAltRight } from "react-icons/bi";
+import Image from "next/image";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,15 +11,21 @@ const Navbar = () => {
   const sectionLinks = [
     { href: "#home", label: "Inicio" },
     { href: "#about", label: "Quienes somos" },
-    { href: "#contact", label: "Como funciona" },
-    { href: "#contacto", label: "Contacto" },
+    { href: "#how-it-works", label: "Como funciona" },
+    { href: "#contact", label: "Contacto" },
   ];
 
   return (
     <>
       <div className="bg-[var(--foreground)] fixed top-0 left-0 w-full h-16 flex items-center justify-between px-4 z-[999]">
         <div className="w-full h-10 flex items-center">
-          <h1>SUD Coin</h1>
+          {/* <h1>SUD Coin</h1> */}
+          <Image
+            src={"/Logo/logo.png"}
+            alt="Logo SUD Coin"
+            width={100}
+            height={100}
+          />
         </div>
 
         {/* Menú móvil */}
@@ -51,7 +58,9 @@ const Navbar = () => {
             <ul className="flex flex-col gap-2 text-xl">
               {sectionLinks.map((section, index) => (
                 <li key={index} onClick={() => setIsOpen(false)}>
-                  <Link href={section.href}>{section.label}</Link>
+                  <Link href={section.href} className="font-bold">
+                    {section.label}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -62,11 +71,14 @@ const Navbar = () => {
         <div className="hidden md:flex items-center gap-5">
           <ul className="flex gap-2 text-xl">
             {sectionLinks.map((section, index) => (
-              <li
-                key={index}
-                className="whitespace-nowrap hover:text-[var(--primary)] transition-colors duration-300"
-              >
-                <Link href={section.href}>{section.label}</Link>
+              <li key={index} className="whitespace-nowrap">
+                <Link
+                  href={section.href}
+                  className="font-bold hover:text-[var(--primary)] transition-colors duration-300"
+                >
+                  {section.label}
+                </Link>{" "}
+                {section.label !== "Contacto" && <span className="">|</span>}
               </li>
             ))}
           </ul>
