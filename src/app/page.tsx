@@ -1,18 +1,19 @@
 import React from "react";
 import InicioSection from "./Sections/InicioSection";
-import Navbar from "./Components/Navbar";
 import QuienesSomosSection from "./Sections/QuienesSomosSection";
 import Contacto from "./Sections/Contacto";
 import ComoFunciona from "./Sections/ComoFunciona";
+import NavbarSticky from "./Components/Navbar2";
 
 export default function Home() {
   return (
-    <div className="overflow-x-hidden">
-      <Navbar />
+    <div className="relative">
+      {/* <Navbar /> */}
+      <NavbarSticky />
       <InicioSection />
       <QuienesSomosSection />
       <ComoFunciona />
-      <Contacto/>
+      <Contacto />
     </div>
   );
 }

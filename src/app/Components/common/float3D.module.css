@@ -1,0 +1,16 @@
+@keyframes float3d {
+
+    0%,
+    100% {
+        transform: translateY(0px) rotate3d(1, 1, 0, 0deg);
+    }
+
+    50% {
+        transform: translateY(-10px) rotate3d(1, 1, 0, 8deg);
+    }
+}
+
+.float3d {
+    animation: float3d 4s ease-in-out infinite;
+    will-change: transform;
+}

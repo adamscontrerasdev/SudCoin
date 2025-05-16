@@ -9,8 +9,8 @@ interface ContainerProps {
 const Container: React.FC<ContainerProps> = ({ children, id, p }) => {
   return (
     <div
-      className={`w-full flex justify-center items-center md:p-10 ${
-        p ? "px-5" : ""
+      className={`w-full flex justify-center items-center  relative   ${
+        p ? "px-5 " : ""
       }`}
       id={id}
     >
